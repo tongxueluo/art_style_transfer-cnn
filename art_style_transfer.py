@@ -1,4 +1,4 @@
-__author__ = 'luoyuan'
+'''A tensorflow implementation of A Neural Algorithm of Artistic Style (https://arxiv.org/abs/1508.06576). Using vgg-19.'''
 
 import tensorflow as tf
 import numpy as np
