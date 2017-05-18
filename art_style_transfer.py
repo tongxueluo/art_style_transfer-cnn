@@ -126,7 +126,6 @@ class art_style_transfer:
         return input_image
 
     def __load_image(self, path):
-        #image = scipy.misc.imread(path)
         image = Image.open(path)
         image = image.resize((self.img_wth, self.img_hgt))  #resize the image
         image = np.array(image)
@@ -166,7 +165,6 @@ class art_style_transfer:
             number_to_continue = 0
         style_image = self.__load_image(style_image)
         model = self.__load_vgg_model()
-#        input_image = self.__generate_noise_image(content_image)
         if self.PRINTOUT:
             print "****************check images***********"
             print "content and style and input imgaes shapes: ", content_image.shape, style_image.shape, input_image.shape
@@ -193,7 +191,7 @@ class art_style_transfer:
         # of layers of the CNN
         #
         # the content is built from on layer, while the style is from five
-        # layers. Then we minimize the total_loss, which is the equation 7.
+        # layers. Then minimize the total_loss, which is the equation 7.
 
         train_step = self.optimizer.minimize(total_loss)
 
